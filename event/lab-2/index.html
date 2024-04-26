@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="">
+    <input type="text">
+    <button onclick="clickBtn()">submit</button>
+
+  </form>
+
+  <script>
+    // HTML- attribute
+    // function clickBtn() {
+    //   alert("Form is submitted");
+    // }
+
+    // DOM Property
+    // const button = document.querySelector("button");
+    // button.onclick = function () {
+    //   alert("Form is submitted");
+    // }
+
+    //Event Listener
+    const button = document.querySelector("button");
+    function c (event) {
+      alert("Form is submitted");
+      event.preventDefault();
+      button.removeEventListener("click",c);
+    }
+    button.addEventListener("click",c);
+
+    
+  </script>
+</body>
+
+</html>
+
+<!-- จงสร้าง Form ที่มี Button สำหรับ submit form และเขียนคำสั่งเพิ่ม Event Handler ลงใน Form เมื่อผู้ใช้กด submit form ให้ Alert คำว่า “Form is submitted” โดยใช้วิธีดังนี้
+HTML-attribute
+DOM property
+Event listener
+จงเขียนคำสั่งยกเลิก Event Handler -->

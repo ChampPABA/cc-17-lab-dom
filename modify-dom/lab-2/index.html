@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+  </ul>
+  <script>
+    
+    // for (let i = 0; i < 5; i++) {
+    //   const ul = document.querySelector("ul");
+    //   let li = document.createElement("li");
+    //   let add = prompt("Please add Text");
+    //   li.innerHTML = add;
+    //   ul.append(li);
+    // }
+
+    const ul = document.querySelector("ul");
+
+    while(1) {
+      const text = prompt("Please Enter Something");
+      if(text === null || text.trim() === "") break;
+      const li = document.createElement("li");
+      li.textContent = text;
+      ul.append(li);
+    }
+
+
+  </script>
+</body>
+</html>

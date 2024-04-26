@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="background-color: aquamarine; width: 600px; height: 600px" id="outer">
+    <div style="background-color: yellow; width: 400px; height: 400px" id="middle">
+      <div style="background-color: red; width: 200px; height: 200px" id="inner">
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  outer.addEventListener("click", function() {
+    console.log("Click Outer");
+  });
+  middle.addEventListener("click", function() {
+    event.stopPropagation();
+    console.log("Click Middle");
+  });
+  inner.addEventListener("click", function() {
+    event.stopPropagation();
+    console.log("Click Inner");
+  }); // ให้ stopPropagation ที่ชั้นก่อนหน้า
+</script>
+
+</html>

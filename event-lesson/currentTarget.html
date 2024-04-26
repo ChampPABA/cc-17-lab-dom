@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+    <ul>
+      <li>John</li>
+      <li>Max</li>
+      <li>Michael</li>
+      <li>Jimmy</li>
+      <li>Joi</li>
+    </ul>
+
+    <input type="text" placeholder="Enter Something" value="test" />
+
+    <a href="https://www.google.com/">Go to Google</a>
+  <script>
+  const aTag = document.querySelector("a");
+  aTag.addEventListener("click", function(event) {
+    event.preventDefault();
+    alert("ไม่ให้ไป google นะจ๊ะ")
+  })
+    document.body.addEventListener("click", function(event) {
+      console.log(event.target);
+      console.log("----------------");
+      console.log(event.currentTarget);
+    });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table,
+    th,
+    td {
+      width: 40%;
+      border: 1px solid black;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="addInput" placeholder="Please Input Your Task">
+  <button id="add">Add</button>
+  <table id="table">
+    <tr>
+      <th>Task</th>
+      <th>Edit</th>
+      <th>Del</th>
+    </tr>
+
+  </table>
+
+
+  <script>
+    const input = document.getElementById("addInput");
+    const addBtn = document.getElementById("add");
+    const table = document.getElementById("table");
+
+    // add.addEventListener("click",function () {
+    //   let tr = document.createElement("tr");
+    //   tr.innerHTML = "<td>Task</td><td><button>Edit</button></td><td><button>Del</button></td>"
+    //   table.append(tr);
+    // })
+
+    addBtn.addEventListener("click", function () {
+
+      // สร้าง tr td td td
+      let tr = document.createElement("tr");
+      let taskTd = document.createElement("td");
+      let taskName = input.value;
+      taskTd.textContent = taskName;
+      taskTd.addEventListener('click', function () {
+        taskTd.classList.toggle('line-through');
+      });
+      let editTd = document.createElement("td");
+      let editBtn = document.createElement("button");
+      editBtn.textContent = "Edit";
+      let delTd = document.createElement("td");
+      let delBtn = document.createElement("button");
+      delBtn.textContent = "Del";
+
+      // ต่อตูด
+      table.append(tr);
+      tr.append(taskTd);
+      tr.append(editTd);
+      editTd.append(editBtn);
+      tr.append(delTd);
+      delTd.append(delBtn);
+
+      // Clear input value
+      input.value = "";
+
+      // ทำปุ่ม edit ต่อ idea คือ กด Edit แล้ว taskName จะเปลี่ยนจาก Text ไปเป็น input แล้วถ้า กด Edit อีกที ให้เอา value นั้นไปเป็น text อีกรอบทำได้ป่ะวะ
+      editBtn.addEventListener('click', function () {
+        if (editBtn.textContent === "Edit") {
+          let editInput = document.createElement("input");
+          editInput.type = "text";
+          editInput.value = taskName;
+          taskTd.textContent = '';
+          taskTd.appendChild(editInput);
+          editInput.focus();
+
+          editBtn.textContent = "OK";
+        } else {
+          let editInput = taskTd.querySelector("input");
+          taskName = editInput.value;
+          taskTd.textContent = taskName;
+          editBtn.textContent = "Edit";
+        }
+      });
+
+
+      // ลบทั้ง tr
+      delBtn.addEventListener("click", function () {
+        tr.remove();
+      })
+
+    });
+
+  </script>
+</body>
+
+</html>

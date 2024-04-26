@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add and Remove Element</title>
+</head>
+<body>
+  <script>
+    function addAndRemoveParagraph() {
+      const loveJava = document.createElement("p");
+      loveJava.textContent = "I love Javascript!";
+
+      const body = document.querySelector("body");
+      body.append(loveJava);
+
+      setTimeout(() => {
+        body.removeChild(loveJava);
+      }, 2000);
+    }
+    addAndRemoveParagraph();
+  </script>
+</body>
+</html>
+

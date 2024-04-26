@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <form action="https://google.com/login" method="" enctype="">
+    <label>Email: </label>
+    <input type="text" placeholder="Enter Your Email" />
+    <label>Password: </label>
+    <input type="password" placeholder="Enter Your Password">
+    <button>Login</button>
+  </form> -->
+    <button>Click</button>
+    <ul>
+      <li>John</li>
+      <li>Max</li>
+      <li>Michael</li>
+      <li>Jimmy</li>
+      <li>Joi</li>
+    </ul>
+  <script>
+    const button = document.querySelector("button");
+    function click1 () {
+      alert("click ____1")
+    }
+    function click2 () {
+      alert("click ____2")
+    }
+    // button.addEventListener("click",click1);
+    // button.addEventListener("click",click2);
+
+    // setTimeout(() => {
+    //   button.removeEventListener("click",click1);
+    // }, 5000);
+    button.addEventListener("click", function (){
+      console.log(this); // this หมายถึง button ถือว่า button เป็น object ที่ใช้งาน function นี้
+    })
+    
+    const list = document.querySelectorAll("li");
+    for (let li of list) {
+      li.addEventListener("click", function () {
+        console.log(this.innerText);
+      })
+    }
+
+  </script>
+</body>
+</html>

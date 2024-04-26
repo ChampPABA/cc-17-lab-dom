@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>ปุ่ม</button>
+
+  <script>
+    const button = document.querySelector("button");
+    button.addEventListener('click', () => alert('1'));  // (1) ทำงาน
+    button.removeEventListener('click', () => alert('1')); // (2) ไม่ทำงาน เพราะ มันไม่ได้ remove function  alert('1') คือ คนละอันกัน (by reference)
+    button.onclick = () => alert(2); // (3) ทำงาน
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label>Province: </label>
+  <select name="province" id="province">
+    <option>แม่ฮ่องสอน</option>
+    <option>กระบี่</option>
+  </select>
+  <br />
+  <label>District: </label>
+  <select name="district" id="district">
+    
+  </select>
+
+  <script>
+    const province = document.getElementById("province");
+    const district = document.getElementById("district");
+
+    province.addEventListener("change",function (event) {
+      if (event.target.value == "แม่ฮ่องสอน") {
+        district.innerHTML = "<option>อ.แม่ฮ่องสอน1</option><option>อ.แม่ฮ่องสอน2</option><option>อ.แม่ฮ่องสอน3</option>"
+      } else if (event.target.value == "กระบี่") {
+        district.innerHTML = "<option>อ.กระบี่1</option><option>อ.กระบี่2</option><option>อ.กระบี่3</option><option>อ.กระบี่4</option>"
+      }
+    })
+
+  </script>
+</body>
+</html>
+
+<!-- จงสร้าง Label และ Select ดังรูป
+เมื่อ click <select> ของ Province ให้แสดงรายชื่อจังหวัด
+เมื่อ click <select> ของ District ให้แสดงอำเภอของจังหวัดที่ถูกเลือก -->
