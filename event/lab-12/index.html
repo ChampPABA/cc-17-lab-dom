@@ -13,6 +13,10 @@
       border: 1px solid black;
       text-align: center;
     }
+
+    .line-through {
+      text-decoration: line-through;
+    }
   </style>
 </head>
 
@@ -47,9 +51,11 @@
       let taskTd = document.createElement("td");
       let taskName = input.value;
       taskTd.textContent = taskName;
+
       taskTd.addEventListener('click', function () {
         taskTd.classList.toggle('line-through');
       });
+
       let editTd = document.createElement("td");
       let editBtn = document.createElement("button");
       editBtn.textContent = "Edit";
